@@ -1,5 +1,6 @@
 package org.example;
 
+import java.net.http.HttpResponse;
 import java.util.List;
 
 public class Main {
@@ -10,13 +11,32 @@ public class Main {
 
 
 //        --- GETTING POST BY ID ---
-//        System.out.println(jsonPlaceholderFetcher.getPostById(1));
+        System.out.println(jsonPlaceholderFetcher.getPostById(1));
 
 
 //        --- GETTING ALL POSTS ---
         List<Post> posts = jsonPlaceholderFetcher.getAllPosts();
         for (Post post : posts) {
             System.out.println(post);
+        }
+
+
+//        --- ADD POST ---
+        String newPost = "{\"title\": \"New Post Title\", \"body\": \"New Post Body\"}";
+        boolean addPostSuccess = postApiHandler.addPostData(newPost);
+
+        if(addPostSuccess) {
+            System.out.println("Successfully added new post");
+        } else {
+            System.out.println("Failed to add new post");
+        }
+
+//        --- WYSWIETLANIE OSTATNIEGO DODANEGO POSTU ---
+        if(!posts.isEmpty()) {
+            Post lastPost = posts.get(posts.size() - 1);
+            System.out.println("Last added post: " + "\n" + lastPost);
+        } else {
+            System.out.println("Failed");
         }
 
 

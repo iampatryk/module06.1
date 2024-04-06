@@ -14,7 +14,7 @@ public class JSONPlaceholderFetcher {
 
     public Post getPostById(int id) {
 
-        HttpResponse<String> response = postApiHandler.postUserData(String.valueOf(id));
+        HttpResponse<String> response = postApiHandler.getPostUserData(String.valueOf(id));
         if (response.statusCode() == 200) {
             return PostMapper.convertJSONToPost(response.body());
         } else {
@@ -30,25 +30,15 @@ public class JSONPlaceholderFetcher {
             throw new RuntimeException();
         }
     }
+
+//    public boolean addPost(String post) {
+//        HttpResponse<String> response = postApiHandler.addPostData(post);
+//        if (response.statusCode() == 201) {
+//            return true;
+//        } else {
+//            throw new RuntimeException();
+//        }
+//    }
 }
 
 
-
-
-/*
-
-    private final UserApiHandler apiHandler;
-    public UserService(UserApiHandler apiHandler) {
-        this.apiHandler = apiHandler;
-    }
-
-    public User getUserById(int id) {
-
-        HttpResponse<String> response = apiHandler.getUserDate(id);
-        if(response.statusCode() == 200) {
-            return UserMapper.convertJSONToUser(response.body());
-        } else {
-            throw new RuntimeException();
-        }
-    }
- */
