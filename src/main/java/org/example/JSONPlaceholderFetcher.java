@@ -1,11 +1,14 @@
 package org.example;
 
 import java.net.http.HttpResponse;
+import java.util.List;
 
 public class JSONPlaceholderFetcher {
+
     private final PostApiHandler postApiHandler;
 
     public JSONPlaceholderFetcher(PostApiHandler postApiHandler) {
+
         this.postApiHandler = postApiHandler;
     }
 
@@ -14,6 +17,15 @@ public class JSONPlaceholderFetcher {
         HttpResponse<String> response = postApiHandler.postUserData(String.valueOf(id));
         if (response.statusCode() == 200) {
             return PostMapper.convertJSONToPost(response.body());
+        } else {
+            throw new RuntimeException();
+        }
+    }
+
+    public List<Post> getAllPosts() {
+        HttpResponse<String> response = postApiHandler.getAllPostsData();
+        if (response.statusCode() == 200) {
+            return PostMapper.convertJSONToPostList(response.body());
         } else {
             throw new RuntimeException();
         }
