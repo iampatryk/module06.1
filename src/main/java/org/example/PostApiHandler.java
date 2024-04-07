@@ -40,11 +40,12 @@ public class PostApiHandler {
         }
     }
 
-    public boolean addPostData(String post) {
+    public boolean addPostData(String postJson) {
         try {
-            HttpRequest request = HttpRequest.newBuilder(new URI(userURL))
-                    .POST(HttpRequest.BodyPublishers.ofString(post))
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(new URI(userURL))
                     .header("Content-Type","application/json")
+                    .POST(HttpRequest.BodyPublishers.ofString(postJson))
                     .build();
 
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());

@@ -31,6 +31,7 @@ public class JSONPlaceholderFetcher {
         }
     }
 
+
 //    public boolean addPost(String post) {
 //        HttpResponse<String> response = postApiHandler.addPostData(post);
 //        if (response.statusCode() == 201) {
@@ -39,6 +40,8 @@ public class JSONPlaceholderFetcher {
 //            throw new RuntimeException();
 //        }
 //    }
+
+
 }
 
 

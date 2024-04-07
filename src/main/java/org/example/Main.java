@@ -11,7 +11,7 @@ public class Main {
 
 
 //        --- GETTING POST BY ID ---
-        System.out.println(jsonPlaceholderFetcher.getPostById(1));
+//        System.out.println(jsonPlaceholderFetcher.getPostById(1));
 
 
 //        --- GETTING ALL POSTS ---
@@ -29,15 +29,18 @@ public class Main {
             System.out.println("Successfully added new post");
         } else {
             System.out.println("Failed to add new post");
+            return;
         }
 
 //        --- WYSWIETLANIE OSTATNIEGO DODANEGO POSTU ---
         if(!posts.isEmpty()) {
-            Post lastPost = posts.get(posts.size() - 1);
+            Post lastPost = posts.getLast();
             System.out.println("Last added post: " + "\n" + lastPost);
         } else {
             System.out.println("Failed");
         }
+
+
 
 
 
