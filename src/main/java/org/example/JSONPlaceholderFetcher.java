@@ -16,7 +16,7 @@ public class JSONPlaceholderFetcher {
 
         HttpResponse<String> response = postApiHandler.getPostUserData(String.valueOf(id));
         if (response.statusCode() == 200) {
-            return PostMapper.convertJSONToPost(response.body());
+            return JSONMapper.convertJSONToPost(response.body());
         } else {
             throw new RuntimeException();
         }
@@ -25,7 +25,7 @@ public class JSONPlaceholderFetcher {
     public List<Post> getAllPosts() {
         HttpResponse<String> response = postApiHandler.getAllPostsData();
         if (response.statusCode() == 200) {
-            return PostMapper.convertJSONToPostList(response.body());
+            return JSONMapper.convertJSONToPostList(response.body());
         } else {
             throw new RuntimeException();
         }
