@@ -50,12 +50,27 @@ public class PostApiHandler {
 
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-            return response.statusCode() ==201;
+            return response.statusCode() == 201;
         } catch (URISyntaxException | IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
 
-
+//    public HttpResponse<String> addPostData(String postJson) {
+//        try {
+//            HttpRequest request = HttpRequest.newBuilder()
+//                    .uri(new URI(userURL))
+//                    .header("Content-Type","application/json")
+//                    .POST(HttpRequest.BodyPublishers.ofString(postJson))
+//                    .build();
+//
+//            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+//
+//            return response;
+//        } catch (URISyntaxException | IOException | InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
 }
+

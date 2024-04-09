@@ -31,6 +31,11 @@ public class JSONPlaceholderFetcher {
         }
     }
 
+    public boolean addPost(String post) {
+        return postApiHandler.addPostData(post);
+    }
+
+
 
 //    public boolean addPost(String post) {
 //        HttpResponse<String> response = postApiHandler.addPostData(post);
