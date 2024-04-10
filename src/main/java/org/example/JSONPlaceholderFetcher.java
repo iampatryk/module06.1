@@ -8,12 +8,10 @@ public class JSONPlaceholderFetcher {
     private final PostApiHandler postApiHandler;
 
     public JSONPlaceholderFetcher(PostApiHandler postApiHandler) {
-
         this.postApiHandler = postApiHandler;
     }
 
     public Post getPostById(int id) {
-
         HttpResponse<String> response = postApiHandler.getPostUserData(String.valueOf(id));
         if (response.statusCode() == 200) {
             return JSONMapper.convertJSONToPost(response.body());
@@ -37,7 +35,7 @@ public class JSONPlaceholderFetcher {
         if (response.statusCode() == 201) {
             return true;
         } else {
-            return false;
+            throw new RuntimeException();
         }
     }
 
