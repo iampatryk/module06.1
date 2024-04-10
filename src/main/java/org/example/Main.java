@@ -11,7 +11,7 @@ public class Main {
 
 
 //        --- GETTING POST BY ID ---
-//        System.out.println(jsonPlaceholderFetcher.getPostById(1));
+        System.out.println(jsonPlaceholderFetcher.getPostById(1));
 
 
 //        --- GETTING ALL POSTS ---
@@ -21,9 +21,9 @@ public class Main {
         }
 
 
-//        --- ADD POST ---
+//        --- ADD POST --- 1
         String newPost = "{\"title\": \"New Post Title\", \"body\": \"New Post Body\"}";
-        boolean addPostSuccess = postApiHandler.addPostData(newPost);
+        boolean addPostSuccess = jsonPlaceholderFetcher.addPost(newPost);
 
         if(addPostSuccess) {
             System.out.println("Successfully added new post");
@@ -31,6 +31,18 @@ public class Main {
             System.out.println("Failed to add new post");
 //            return;
         }
+
+
+        //        --- ADD POST --- 2
+//        String newPost = "{\"title\": \"New Post Title\", \"body\": \"New Post Body\"}";
+//        boolean addPostSuccess = postApiHandler.addPostData(newPost);
+//
+//        if(addPostSuccess) {
+//            System.out.println("Successfully added new post");
+//        } else {
+//            System.out.println("Failed to add new post");
+////            return;
+//        }
 
 
 

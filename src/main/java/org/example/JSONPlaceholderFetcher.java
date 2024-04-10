@@ -31,21 +31,20 @@ public class JSONPlaceholderFetcher {
         }
     }
 
+//      ---ADD POST 1 ---
     public boolean addPost(String post) {
-        return postApiHandler.addPostData(post);
+        HttpResponse<String> response = postApiHandler.addPostData(post);
+        if (response.statusCode() == 201) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-
-
+//      ---ADD POST 2 ---
 //    public boolean addPost(String post) {
-//        HttpResponse<String> response = postApiHandler.addPostData(post);
-//        if (response.statusCode() == 201) {
-//            return true;
-//        } else {
-//            throw new RuntimeException();
-//        }
+//        return postApiHandler.addPostData(post);
 //    }
-
 
 }
 

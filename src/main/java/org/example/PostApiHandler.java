@@ -40,7 +40,8 @@ public class PostApiHandler {
         }
     }
 
-    public boolean addPostData(String postJson) {
+//      ---ADD POST 1 ---
+    public HttpResponse<String> addPostData(String postJson) {
         try {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(new URI(userURL))
@@ -50,13 +51,15 @@ public class PostApiHandler {
 
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-            return response.statusCode() == 201;
+            return response;
         } catch (URISyntaxException | IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
 
-//    public HttpResponse<String> addPostData(String postJson) {
+
+//      ---ADD POST 2 ---
+//        public boolean addPostData(String postJson) {
 //        try {
 //            HttpRequest request = HttpRequest.newBuilder()
 //                    .uri(new URI(userURL))
@@ -66,7 +69,7 @@ public class PostApiHandler {
 //
 //            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 //
-//            return response;
+//            return response.statusCode() == 201;
 //        } catch (URISyntaxException | IOException | InterruptedException e) {
 //            throw new RuntimeException(e);
 //        }
