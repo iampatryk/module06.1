@@ -40,4 +40,16 @@ public class PostTests {
         Assertions.assertEquals(expectedJson, actualJson);
 
     }
+
+    @Test
+    public void addPostTest() {
+        PostApiHandler postApiHandler = new PostApiHandler();
+        JSONPlaceholderFetcher jsonPlaceholderFetcher = new JSONPlaceholderFetcher(postApiHandler);
+
+        String newPost = "{\"title\": \"New Post Title\", \"body\": \"New Post Body\"}";
+        boolean result = jsonPlaceholderFetcher.addPost(newPost);
+
+        Assertions.assertTrue(result);
+
+    }
 }

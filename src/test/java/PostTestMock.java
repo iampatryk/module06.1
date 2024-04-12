@@ -8,6 +8,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import java.net.http.HttpResponse;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -42,12 +43,8 @@ public class PostTestMock {
 
 //    @Test
 //    public void addPostTest() {
-//        PostApiHandler postApiHandler = new PostApiHandler();
-//        when(postApiHandler.addPostData(anyString())).thenReturn(response);
-//        JSONPlaceholderFetcher jsonPlaceholderFetcher = new JSONPlaceholderFetcher(postApiHandler);
-//        String newPost = "{\"title\": \"New Post Title\", \"body\": \"New Post Body\"}";
-//        boolean result = jsonPlaceholderFetcher.addPost(newPost);
 //
-//        Assertions.assertEquals(response, result);
+//
+//
 //    }
  }
