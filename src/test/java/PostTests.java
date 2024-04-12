@@ -19,7 +19,7 @@ public class PostTests {
     }
 
     @Test
-    public void getMultiplePostsTest() {
+    public void getAllPostsTest() {
         JSONPlaceholderFetcher jsonPlaceholderFetcher = new JSONPlaceholderFetcher(new PostApiHandler());
 
         int expectedSize = 100;
