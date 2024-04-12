@@ -2,7 +2,7 @@ package org.example;
 
 import java.net.http.HttpResponse;
 import java.util.List;
-//userService
+
 public class JSONPlaceholderFetcher {
 
     private final PostApiHandler postApiHandler;
